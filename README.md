@@ -26,6 +26,6 @@ Course offered by Udemy. Created and taught by Valentyn Sichkar.
 
 [Clone this repository for OIDv4 ToolKit](https://github.com/EscVM/OIDv4_ToolKit)
 
-[Link for YOLO Network Weights trained on COCOC Dataset (Used in Section 2)](https://drive.google.com/drive/folders/1ec5eIn1G9xs-SfdXEhjCLDEc1HHJ_USv?usp=sharing)
+[Link for YOLO Network Weights trained on COCO Dataset (Used in Section 2)](https://drive.google.com/drive/folders/1ec5eIn1G9xs-SfdXEhjCLDEc1HHJ_USv?usp=sharing)
 
 [Link for CSV File Containing Train Annotations (Used in Section 4)](https://drive.google.com/file/d/1HUSi5Iu3Y3GjJ1qJcRz6JkM_wtgILy9y/view?usp=sharing)
