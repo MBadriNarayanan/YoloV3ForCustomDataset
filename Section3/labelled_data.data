@@ -1,0 +1,5 @@
+classes = 2
+train = C:/Users/badri/Desktop/YoloV3CustomDataset/Section3/train.txt
+valid = C:/Users/badri/Desktop/YoloV3CustomDataset/Section3/test.txt
+names = C:/Users/badri/Desktop/YoloV3CustomDataset/Section3/classes.names
+backup = backup
