@@ -1,0 +1,3 @@
+C:/Users/badri/Desktop/YoloV3CustomDataset/Section4/Dataset/train/Car_Bicycle_wheel_Bus/0899f4d42943b8fd.jpg
+C:/Users/badri/Desktop/YoloV3CustomDataset/Section4/Dataset/train/Car_Bicycle_wheel_Bus/0ffe3a4c5bfd3b9a.jpg
+C:/Users/badri/Desktop/YoloV3CustomDataset/Section4/Dataset/train/Car_Bicycle_wheel_Bus/15e64b0973962df8.jpg

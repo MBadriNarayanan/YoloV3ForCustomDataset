@@ -1,0 +1,5 @@
+classes = 3
+train = C:/Users/badri/Desktop/YoloV3CustomDataset/Section4/Dataset/train/Car_Bicycle_wheel_Bus/train.txt
+valid = C:/Users/badri/Desktop/YoloV3CustomDataset/Section4/Dataset/train/Car_Bicycle_wheel_Bus/test.txt
+names = C:/Users/badri/Desktop/YoloV3CustomDataset/Section4/Dataset/train/Car_Bicycle_wheel_Bus/classes.names
+backup = backup
