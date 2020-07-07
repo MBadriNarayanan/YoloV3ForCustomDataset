@@ -33,3 +33,36 @@ Course offered by Udemy. Created and taught by Valentyn Sichkar.
 [Link for CSV File Containing Train Annotations (Used in Section 4)](https://drive.google.com/file/d/1HUSi5Iu3Y3GjJ1qJcRz6JkM_wtgILy9y/view?usp=sharing)
 
 [Link for Traffic Dataset Download FullIJCNN2013.zip (Used in Section 5)](https://sid.erda.dk/public/archives/ff17dc924eba88d5d01a807357d6614c/published-archive.html)
+
+
+## Important commands for dataset preparation and execution and checking the result
+
+# To Prepare Images in YOLO Format
+
+1) Install LabelImg using pip install LabelImg
+2) draw bounding boxes around the objects and save it in YOLO Format
+
+# Extracting Frames from Video
+
+1) Install ffmpeg
+2) Go to the directory of the video and type ffmpeg -i filename.mp4 -vf fps=4 image-%d.jpeg
+3) Extracted images will be the in directory of the video 
+4) Prepare the dataset in YOLO Format
+
+
+# Darknet
+
+Create the folder weights and add yolov3.weights
+
+In the data folder, add the test-image.jpg and test-video.mp4
+
+1) Command to check installation of darknet
+
+a)For image file 
+Go to darknet root directory and type : darknet.exe detector test cfg/coco.data cfg/yolov3.cfg weights/yolov3.weights -thresh 0.85 -ext_output data/test-image.jpg
+Output will be stored as predictions.jpg
+
+b) For video file
+Go to darknet root directory and type : darknet.exe detector demo cfg\coco.data cfg\yolov3.cfg weights\yolov3.weights
+-thresh 0.85 -dont_show data\test-video.mp4 -out_filename result.avi
+Output will be stored as result.avi
