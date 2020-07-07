@@ -51,7 +51,7 @@ Course offered by Udemy. Created and taught by Valentyn Sichkar.
 
 ### Installing OIDv4 toolkit for downloading images from a huge dataset
 
-1) Clone the OIDv4 Repository [](https://github.com/EscVM/OIDv4_ToolKit)
+1) Clone the OIDv4 Repository [https://github.com/EscVM/OIDv4_ToolKit]
 
 #### Darknet
 
