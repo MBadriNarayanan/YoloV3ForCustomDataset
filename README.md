@@ -37,12 +37,12 @@ Course offered by Udemy. Created and taught by Valentyn Sichkar.
 
 ## Important commands for dataset preparation and execution and checking the result
 
-# To Prepare Images in YOLO Format
+### To Prepare Images in YOLO Format
 
 1) Install LabelImg using pip install LabelImg
 2) draw bounding boxes around the objects and save it in YOLO Format
 
-# Extracting Frames from Video
+### Extracting Frames from Video
 
 1) Install ffmpeg
 2) Go to the directory of the video and type ffmpeg -i filename.mp4 -vf fps=4 image-%d.jpeg
@@ -50,13 +50,13 @@ Course offered by Udemy. Created and taught by Valentyn Sichkar.
 4) Prepare the dataset in YOLO Format
 
 
-# Darknet
+#### Darknet
 
 Create the folder weights and add yolov3.weights
 
 In the data folder, add the test-image.jpg and test-video.mp4
 
-1) Command to check installation of darknet
+##### Command to check installation of darknet
 
 a)For image file 
 Go to darknet root directory and type : darknet.exe detector test cfg/coco.data cfg/yolov3.cfg weights/yolov3.weights -thresh 0.85 -ext_output data/test-image.jpg
