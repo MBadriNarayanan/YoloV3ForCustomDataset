@@ -60,9 +60,11 @@ In the data folder, add the test-image.jpg and test-video.mp4
 
 a)For image file 
 Go to darknet root directory and type : darknet.exe detector test cfg/coco.data cfg/yolov3.cfg weights/yolov3.weights -thresh 0.85 -ext_output data/test-image.jpg
+<br/>
 Output will be stored as predictions.jpg
 
 b) For video file
 Go to darknet root directory and type : darknet.exe detector demo cfg\coco.data cfg\yolov3.cfg weights\yolov3.weights
 -thresh 0.85 -dont_show data\test-video.mp4 -out_filename result.avi
+<br/>
 Output will be stored as result.avi
