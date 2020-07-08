@@ -90,7 +90,7 @@ Course offered by Udemy. Created and taught by Valentyn Sichkar.
 
 3) Create the folder weights and add yolov3.weights
 
-In the data folder, add the test-image.jpg and test-video.mp4
+4) In the data folder in the darknet directory add the test-image.jpg and test-video.mp4 files
 
 ##### Command to check installation of darknet
 
@@ -104,3 +104,15 @@ Go to darknet root directory and type : darknet.exe detector demo cfg\coco.data 
 -thresh 0.85 -dont_show data\test-video.mp4 -out_filename result.avi
 
 4) Output will be stored as result.avi
+
+
+#### After checking if darknet works
+
+* Copy the ts_data.data from the Traffic Dataset and custom_data.data from Car_Bicycle_wheel_Bus dataset to the cfg folder in the darknet directory
+* Open the yolov3.cfg file in the cfg folder in the darknet directory and copy its contents to four different files namely yolov3_ts_train.cfg, yolov3_ts_test.cfg, yolov3_custom_train.cfg, yolov3_custom_test.cfg and save it in the cfg folder.
+* Open the two files for training, uncomment lines # batch=64 # subdivisions=16 and change the value of batch to 32. Delete the lines batch=1 , subdivisions=1 . Save results. 
+* Open two files for testing and delete lines # batch=64 , # subdivisions=16 . Save results. 
+* Next step is changing max_batches (i.e) total number of iterations for training and the general formula used is  max_batches = classes * 2000 (but not less than 4000) and steps are calculated as 80% and 90% from max_batches.
+* For example, if number of classes is equal to 2, then:
+  * max_batches=4000
+  * steps=3200,3600
