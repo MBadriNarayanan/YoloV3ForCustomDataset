@@ -120,4 +120,4 @@ Go to darknet root directory and type : darknet.exe detector demo cfg\coco.data 
 * Next, it is needed to update number of classes in every of three yolo layers in the end of
 the configuration files. Also, it is needed to update number of filters in convolutional layers right before such every yolo layers but not anywhere else. It is needed in order to properly connect convolutional layer that is right before yolo layer in accordance with number of classes in dataset.
 * General equation that represents how to calculate proper number of filters in three convolutonal layers right before every of three yolo layers is as following 
- * filters = (classes + coordinates + 1) * masks
+ *  filters = (classes + coordinates + 1) * masks
