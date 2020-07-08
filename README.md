@@ -34,7 +34,9 @@ Course offered by Udemy. Created and taught by Valentyn Sichkar.
 
 [Link for Traffic Dataset Download FullIJCNN2013.zip (Used in Section 5)](https://sid.erda.dk/public/archives/ff17dc924eba88d5d01a807357d6614c/published-archive.html)
 
-[Link for yolov3.weights (Used in Darknet)](https://drive.google.com/file/d/1lwzseO2rlwcithPUhnIjIOVztk0rmRrP/view?usp=sharing)
+[Link for yolov3.weights (Used in Section 6)](https://drive.google.com/file/d/1lwzseO2rlwcithPUhnIjIOVztk0rmRrP/view?usp=sharing)
+
+[Link for darknet53.conv.74 (Used in Section 6)](https://drive.google.com/file/d/1TvQkxcfS92lvYEYusMnBYFsHX4Bb8We-/view?usp=sharing)
 
 ## Important commands for dataset preparation and execution and checking the result
 
@@ -121,3 +123,4 @@ Go to darknet root directory and type : darknet.exe detector demo cfg\coco.data 
 the configuration files. Also, it is needed to update number of filters in convolutional layers right before such every yolo layers but not anywhere else. It is needed in order to properly connect convolutional layer that is right before yolo layer in accordance with number of classes in dataset.
 * General equation that represents how to calculate proper number of filters in three convolutonal layers right before every of three yolo layers is as following 
  *  filters = (classes + coordinates + 1) * masks
+* For example, for COCO dataset it will be as following: filters = (80 + 5) * 3 = 255
