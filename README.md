@@ -53,7 +53,7 @@ Course offered by Udemy. Created and taught by Valentyn Sichkar.
 
 ### Section 4 : Installing OIDv4 toolkit for downloading images from a huge dataset
 
-1) Clone the OIDv4 Repository [https://github.com/EscVM/OIDv4_ToolKit]
+1) Clone the OIDv4 Repository [OIDv4](https://github.com/EscVM/OIDv4_ToolKit)
 2) Activate your python environment and navigate to the directory where the repository was cloned and type the following command : pip install -r requirements.txt
 3) To verify type the following command : python main.py -h
 4) After verifying type the following command : python main.py downloader --classes Car Bicycle_wheel Bus --type_csv train --multiclasses 1 --limit 9
