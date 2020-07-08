@@ -43,7 +43,7 @@ Course offered by Udemy. Created and taught by Valentyn Sichkar.
 1) Install LabelImg using pip install LabelImg
 2) Draw bounding boxes around the objects and save it in YOLO Format.
 
-### Section 3 Extracting Frames from Video
+### Section 3 : Extracting Frames from Video
 
 1) Install ffmpeg
 2) Go to the directory of the video and type ffmpeg -i filename.mp4 -vf fps=4 image-%d.jpeg
@@ -51,7 +51,7 @@ Course offered by Udemy. Created and taught by Valentyn Sichkar.
 4) Draw bounding boxes around the extracted video using LabelImg
 5) Prepare the dataset in YOLO Format using 03DataPreparation Notebook
 
-### Section 4 Installing OIDv4 toolkit for downloading images from a huge dataset
+### Section 4 : Installing OIDv4 toolkit for downloading images from a huge dataset
 
 1) Clone the OIDv4 Repository [https://github.com/EscVM/OIDv4_ToolKit]
 2) Activate your python environment and navigate to the directory where the repository was cloned and type the following command : pip install -r requirements.txt
@@ -65,13 +65,13 @@ Course offered by Udemy. Created and taught by Valentyn Sichkar.
 10) Prepare data in YOLO Format using 04DataPreparation notebook
 
 
-### Section 4b Joing the labelled and custom datasets
+### Section 4b : Joining the labelled and custom datasets
 
 1) Copy only the images that we downloaded from the huge dataset [Section4](https://github.com/MBadriNarayanan/YoloV3ForCustomDataset/tree/master/Section4/Dataset/train/Car_Bicycle_wheel_Bus) and the images we extracted from the video [Section 3](https://github.com/MBadriNarayanan/YoloV3ForCustomDataset/tree/master/Section3) to a new folder LabeledCustom.
 
 2) Run the 04JoiningDatasets in Section 4b to join the dataset and prepare it in YOLO Format.
 
-### Section 5 Traffic Dataset
+### Section 5 : Traffic Dataset
 
 1) Download the traffic dataset from the link provided
 2) Convert annotations from the csv file using 05ConvertingAnnotations notebook
@@ -82,7 +82,7 @@ Course offered by Udemy. Created and taught by Valentyn Sichkar.
 
 ### Note : In Sections 3,4,4b,5 if you want to check if we have prepared the images correctly create a classes.txt file in the same order and open labelImg and verify
 
-### Section 6 Darknet
+### Section 6 : Darknet
 
 1) Install Tensorflow with GPU Support using thistutorial from Jeff Heaton [Tensorflow GPU](https://www.youtube.com/watch?v=qrkEYf-YDyI)
 
@@ -96,11 +96,11 @@ In the data folder, add the test-image.jpg and test-video.mp4
 
 1) For image file 
 Go to darknet root directory and type : darknet.exe detector test cfg/coco.data cfg/yolov3.cfg weights/yolov3.weights -thresh 0.85 -ext_output data/test-image.jpg
-<br/>
-Output will be stored as predictions.jpg
 
-2) For video file
+2) Output will be stored as predictions.jpg
+
+3) For video file
 Go to darknet root directory and type : darknet.exe detector demo cfg\coco.data cfg\yolov3.cfg weights\yolov3.weights
 -thresh 0.85 -dont_show data\test-video.mp4 -out_filename result.avi
-<br/>
-Output will be stored as result.avi
+
+4) Output will be stored as result.avi
