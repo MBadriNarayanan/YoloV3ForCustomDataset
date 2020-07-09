@@ -217,3 +217,15 @@ the configuration files. Also, it is needed to update number of filters in convo
 * max_batches : Double or triple total number of iterations inside cfg file for training. Don't forget also to update parameter steps giving 80% and 90% accordingly.
 
 * Increase total number of labelled images in dataset. As well as, add empty images without any needed objects.
+
+
+
+# Section 7 : PyQt user Interface
+
+* Activate you environment and install PyQt using pip install PyQt5
+* Verify using the following commands
+ * python
+ * from PyQt5.Qt import PYQT_VERSION_STR
+ * print(PYQT_VERSION_STR)
+* Exit the python shell and check if Qt designer is installed by typing the following command : designer
+
