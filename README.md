@@ -1,9 +1,10 @@
 # YoloV3ForCustomDataset
+
 Course offered by Udemy. Created and taught by Valentyn Sichkar.
 
-## Done in Windows Machine
+[Course Certficate](https://github.com/MBadriNarayanan/YoloV3ForCustomDataset/blob/master/Course%20Certificate.pdf)
 
-[Course Certficate]()
+## Done in Windows Machine
 
 [Section 1 : Object Detection Using Simple Thresholding](https://github.com/MBadriNarayanan/YoloV3ForCustomDataset/blob/master/Section1/01SimpleObjectDetectionByThresholdingWithMask.ipynb)
 
@@ -84,6 +85,8 @@ Course offered by Udemy. Created and taught by Valentyn Sichkar.
 
 * Convert annotations from the csv file using 04ConvertingAnnotations notebook
 
+* For easier access I would have copied the Dataset and csv_folder Folders to Section 4 and would have deleted the OIDv4 folder
+
 * Prepare data in YOLO Format using 04DataPreparation notebook
 
 
@@ -104,8 +107,6 @@ Course offered by Udemy. Created and taught by Valentyn Sichkar.
 
 ### Note : In all notebooks use the proper directory 
 
-### Note : In all Data Preparation Notebooks give the proper location of the backup location
-
 ### Note : In Sections 3,4,4b,5 if you want to check if we have prepared the images correctly create a classes.txt file in the same order and open LabelImg and verify
 
 ### Section 6 : Darknet
@@ -121,6 +122,7 @@ Course offered by Udemy. Created and taught by Valentyn Sichkar.
 ##### Command to check installation of darknet
 
 * For image file 
+
 Go to darknet root directory and type : darknet.exe detector test cfg\coco.data cfg\yolov3.cfg weights\yolov3.weights -thresh 0.85 -ext_output data\test-image.jpg
 
 Output will be stored as predictions.jpg
@@ -169,6 +171,17 @@ the configuration files. Also, it is needed to update number of filters in convo
 
 * For Car Bicycle_wheel Bus Dataset type the following command : darknet.exe detector train cfg\custom_data.data cfg\yolov3_custom_train.cfg weights\darknet53.conv.7 -dont_show
 
+#### Note : In all Data Preparation Notebooks give the proper location of the backup location
+
+* Weights will be saved every 100 iterations and 1000 iterations. To define the best one to use for detection to make sure no overfitting occurs we use the mAP algorithm
+
+* The goal is to find weights that have the biggest mAP.
+
+* For example, if we consider Traffic Signs dataset, and if mAP for 7000 iterations is bigger than for 8000, then it is needed to check weights for 6000 iterations. Next, if mAP for 6000 iterations is already less than for 7000 iterations, then you can stop checking and use weights for 7000 iterations in detection tasks.
+
+* Also, it is possible to continue checking weights between 6000 and 7000 iterations, trying to find weights even with bigger mAP.
+
+* To find the mAP for weights of 8000 iteration go to the darknet directory and type : darknet.exe detector map cfg\ts_data.data cfg\yolov3_ts_train.cfg backup\yolo-obj_8000.weights.
 
 ### Testing 
 
