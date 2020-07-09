@@ -218,13 +218,4 @@ the configuration files. Also, it is needed to update number of filters in convo
 
 * Increase total number of labelled images in dataset. As well as, add empty images without any needed objects.
 
-
-
-# Section 7 : PyQt user Interface
-
-* Activate you environment and install PyQt using pip install PyQt5
-* Enter the python shell and verify using the following commands
-  * from PyQt5.Qt import PYQT_VERSION_STR
-  * print(PYQT_VERSION_STR)
-* Exit the python shell and check if Qt designer is installed by typing the following command : designer
-
+### To test multiple images visit [AlexyAB's Darknet repository for the command](https://github.com/AlexeyAB/darknet)
