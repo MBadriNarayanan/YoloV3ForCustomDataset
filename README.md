@@ -160,9 +160,9 @@ Go to darknet root directory and type : darknet.exe detector demo cfg/coco.data 
 the configuration files. Also, it is needed to update number of filters in convolutional layers right before such every yolo layers but not anywhere else. It is needed in order to properly connect convolutional layer that is right before yolo layer in accordance with number of classes in dataset.
 
 * General equation that represents how to calculate proper number of filters in three convolutonal layers right before every of three yolo layers is as following 
- *  filters = (classes + coordinates + 1) * masks
+ *  filters = (classes + coordinates + 1) x  masks
 
-* For example, for COCO dataset it will be as following: filters = (80 + 5) * 3 = 255
+* For example, for COCO dataset it will be as following: filters = (80 + 5) x  3 = 255
 
 
 ### Training
@@ -224,8 +224,7 @@ the configuration files. Also, it is needed to update number of filters in convo
 
 * Activate you environment and install PyQt using pip install PyQt5
 * Enter the python shell and verify using the following commands
-<br/>
-  • from PyQt5.Qt import PYQT_VERSION_STR
-  • print(PYQT_VERSION_STR)
+  * from PyQt5.Qt import PYQT_VERSION_STR
+  * print(PYQT_VERSION_STR)
 * Exit the python shell and check if Qt designer is installed by typing the following command : designer
 
