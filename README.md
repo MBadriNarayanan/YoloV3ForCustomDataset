@@ -55,6 +55,7 @@ Course offered by Udemy. Created and taught by Valentyn Sichkar.
 ### Section 3 : Extracting Frames from Video
 
 * Install ffmpeg
+
 * Go to the directory of the video and type ffmpeg -i filename.mp4 -vf fps=4 image-%d.jpeg
 
 * Extracted images will be the in directory of the video
@@ -121,13 +122,14 @@ Course offered by Udemy. Created and taught by Valentyn Sichkar.
 
 * For image file 
 Go to darknet root directory and type : darknet.exe detector test cfg\coco.data cfg\yolov3.cfg weights\yolov3.weights -thresh 0.85 -ext_output data\test-image.jpg
-* Output will be stored as predictions.jpg
+
+Output will be stored as predictions.jpg
 
 * For video file
 
 Go to darknet root directory and type : darknet.exe detector demo cfg\coco.data cfg\yolov3.cfg weights\yolov3.weights -thresh 0.85 -dont_show data\test-video.mp4 -out_filename result.avi
 
-* Output will be stored as result.avi
+Output will be stored as result.avi
 
 * For real time camera
 
