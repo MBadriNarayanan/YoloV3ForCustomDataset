@@ -206,3 +206,14 @@ the configuration files. Also, it is needed to update number of filters in convo
 * To test the Car Bicycle wheel Bus Dataset mp4 type the following command : darknet.exe detector test cfg\custom_data.data cfg\yolov3_custom_test.cfg weights\yolov3_custom.weights -thresh 0.85 -dont_show data\buses-to-test.mp4 -out_filename result.avi
 
 * Output will be stored as result.avi
+
+
+### To improve model accuracy 
+
+* Set the random parameter to 1  : 3 times in every yolo layer inside cfg file for training.
+
+* height=608 , width=608 : Increase resolution for input images inside cfg files for training and testing. Choose any number that is divisible by 32 without leaving a remainder.
+
+* max_batches : Double or triple total number of iterations inside cfg file for training. Don't forget also to update parameter steps giving 80% and 90% accordingly.
+
+* Increase total number of labelled images in dataset. As well as, add empty images without any needed objects.
