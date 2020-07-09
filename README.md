@@ -223,9 +223,8 @@ the configuration files. Also, it is needed to update number of filters in convo
 # Section 7 : PyQt user Interface
 
 * Activate you environment and install PyQt using pip install PyQt5
-* Verify using the following commands
- * python
- * from PyQt5.Qt import PYQT_VERSION_STR
- * print(PYQT_VERSION_STR)
+* Enter the python shell and verify using the following commands
+  • from PyQt5.Qt import PYQT_VERSION_STR
+  • print(PYQT_VERSION_STR)
 * Exit the python shell and check if Qt designer is installed by typing the following command : designer
 
