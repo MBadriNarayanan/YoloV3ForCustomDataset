@@ -181,7 +181,9 @@ the configuration files. Also, it is needed to update number of filters in convo
 
 * Also, it is possible to continue checking weights between 6000 and 7000 iterations, trying to find weights even with bigger mAP.
 
-* To find the mAP for weights of 8000 iteration go to the darknet directory and type : darknet.exe detector map cfg\ts_data.data cfg\yolov3_ts_train.cfg backup\yolo-obj_8000.weights.
+* To find the mAP for weights of 8000 iteration for the Traffic Dataset go to the darknet directory and type : darknet.exe detector map cfg\ts_data.data cfg\yolov3_ts_train.cfg backup\yolo-obj_8000.weights.
+
+* To find the mAP for weights of 6000 iteration for the Traffic Dataset go to the darknet directory and type : darknet.exe detector map cfg\custom_data.data cfg\yolov3_custom_train.cfg backup\yolo-obj_6000.weights.
 
 ### Testing 
 
