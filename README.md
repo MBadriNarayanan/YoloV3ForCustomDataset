@@ -210,7 +210,7 @@ the configuration files. Also, it is needed to update number of filters in convo
 
 ### To improve model accuracy 
 
-* Set the random parameter to 1  : 3 times in every yolo layer inside cfg file for training.
+* Set the random parameter to 1 : 3 times in every yolo layer inside cfg file for training.
 
 * height=608 , width=608 : Increase resolution for input images inside cfg files for training and testing. Choose any number that is divisible by 32 without leaving a remainder.
 
