@@ -1,6 +1,7 @@
 # YoloV3ForCustomDataset
 Course offered by Udemy. Created and taught by Valentyn Sichkar.
 
+## Done in Windows Machine
 
 [Course Certficate]()
 
@@ -38,32 +39,50 @@ Course offered by Udemy. Created and taught by Valentyn Sichkar.
 
 [Link for darknet53.conv.74 (Used in Section 6)](https://drive.google.com/file/d/1TvQkxcfS92lvYEYusMnBYFsHX4Bb8We-/view?usp=sharing)
 
+[Link to yolov3_ts.weights (Used in Section 6)](https://drive.google.com/file/d/1EKhLtVdSJg6MV4nlGjdO82Urffchfyj7/view?usp=sharing)
+
+[Link to yolov3_custom.weights (Used in Section 6)](https://drive.google.com/file/d/1q9yD2cB8wJDwODBP6ngesY9Sv_PMlbUx/view?usp=sharing)
+
+
 ## Important commands for dataset preparation and execution and checking the result
 
 ### To Prepare Images in YOLO Format
 
 * Install LabelImg using pip install LabelImg
+
 * Draw bounding boxes around the objects and save it in YOLO Format.
 
 ### Section 3 : Extracting Frames from Video
 
 * Install ffmpeg
 * Go to the directory of the video and type ffmpeg -i filename.mp4 -vf fps=4 image-%d.jpeg
+
 * Extracted images will be the in directory of the video
+
 * Draw bounding boxes around the extracted video using LabelImg
+
 * Prepare the dataset in YOLO Format using 03DataPreparation Notebook
 
 ### Section 4 : Installing OIDv4 toolkit for downloading images from a huge dataset
 
 * Clone the OIDv4 Repository [OIDv4](https://github.com/EscVM/OIDv4_ToolKit)
+
 * Activate your python environment and navigate to the directory where the repository was cloned and type the following command : pip install -r requirements.txt
+
 * To verify type the following command : python main.py -h
+
 * After verifying type the following command : python main.py downloader --classes Car Bicycle_wheel Bus --type_csv train --multiclasses 1 --limit 9
+
 * 9 Images of the classes Car Bicycle_wheel and Bus will be downloaded and two csv file will also be downloaded in the OID Folder.
+
 * One CSV file will contain annotations and the other will contain and the class description.
+
 * In order to verify type the following command : python main.py visualizer
+
 * Rename the Car_Bicycle wheel_Bus folder to Car_Bicycle_wheel_Bus to avoid errors
+
 * Convert annotations from the csv file using 04ConvertingAnnotations notebook
+
 * Prepare data in YOLO Format using 04DataPreparation notebook
 
 
@@ -76,11 +95,15 @@ Course offered by Udemy. Created and taught by Valentyn Sichkar.
 ### Section 5 : Traffic Dataset
 
 * Download the traffic dataset from the link provided
+
 * Convert annotations from the csv file using 05ConvertingAnnotations notebook
+
 * Prepare data in YOLO Format using 05DataPreparation notebook
 
 
 ### Note : In all notebooks use the proper directory 
+
+### Note : In all Data Preparation Notebooks give the proper location of the backup location
 
 ### Note : In Sections 3,4,4b,5 if you want to check if we have prepared the images correctly create a classes.txt file in the same order and open LabelImg and verify
 
@@ -97,30 +120,72 @@ Course offered by Udemy. Created and taught by Valentyn Sichkar.
 ##### Command to check installation of darknet
 
 * For image file 
-Go to darknet root directory and type : darknet.exe detector test cfg/coco.data cfg/yolov3.cfg weights/yolov3.weights -thresh 0.85 -ext_output data/test-image.jpg
-
+Go to darknet root directory and type : darknet.exe detector test cfg\coco.data cfg\yolov3.cfg weights\yolov3.weights -thresh 0.85 -ext_output data\test-image.jpg
 * Output will be stored as predictions.jpg
 
 * For video file
-Go to darknet root directory and type : darknet.exe detector demo cfg\coco.data cfg\yolov3.cfg weights\yolov3.weights
--thresh 0.85 -dont_show data\test-video.mp4 -out_filename result.avi
+
+Go to darknet root directory and type : darknet.exe detector demo cfg\coco.data cfg\yolov3.cfg weights\yolov3.weights -thresh 0.85 -dont_show data\test-video.mp4 -out_filename result.avi
 
 * Output will be stored as result.avi
+
+* For real time camera
+
+Go to darknet root directory and type : darknet.exe detector demo cfg/coco.data cfg/yolov3.cfg weights/yolov3.weights -thresh 0.85 -c 0
 
 
 #### After checking if darknet works
 
 * Copy the ts_data.data from the Traffic Dataset and custom_data.data from Car_Bicycle_wheel_Bus dataset to the cfg folder in the darknet directory
+
 * Open the yolov3.cfg file in the cfg folder in the darknet directory and copy its contents to four different files namely yolov3_ts_train.cfg, yolov3_ts_test.cfg, yolov3_custom_train.cfg, yolov3_custom_test.cfg and save it in the cfg folder.
-* Open the two files for training, uncomment lines # batch=64 # subdivisions=16 and change the value of batch to 32. Delete the lines batch=1 , subdivisions=1 . Save results. 
+
+* Open the two files for training, uncomment lines # batch=64 # subdivisions=16 and change the value of batch to 64 and the value of subdivisions to 64. Delete the lines batch=1 , subdivisions=1 . Save results. 
+
 * Open two files for testing and delete lines # batch=64 , # subdivisions=16 . Save results. 
+
 * Next is changing max_batches (i.e) total number of iterations for training and the general formula used is  max_batches = classes * 2000 (but not less than 4000)
+
 * Steps are calculated as 80% and 90% from max_batches.
+
 * For example, if number of classes is equal to 2, then:
   * max_batches=4000
   * steps=3200,3600
+
 * Next, it is needed to update number of classes in every of three yolo layers in the end of
 the configuration files. Also, it is needed to update number of filters in convolutional layers right before such every yolo layers but not anywhere else. It is needed in order to properly connect convolutional layer that is right before yolo layer in accordance with number of classes in dataset.
+
 * General equation that represents how to calculate proper number of filters in three convolutonal layers right before every of three yolo layers is as following 
  *  filters = (classes + coordinates + 1) * masks
+
 * For example, for COCO dataset it will be as following: filters = (80 + 5) * 3 = 255
+
+
+### Training
+
+* For Traffic Dataset type the following command : darknet.exe detector train cfg\ts_data.data cfg\yolov3_ts_train.cfg weights\darknet53.conv.74 -dont_show
+
+* For Car Bicycle_wheel Bus Dataset type the following command : darknet.exe detector train cfg\custom_data.data cfg\yolov3_custom_train.cfg weights\darknet53.conv.7 -dont_show
+
+
+### Testing 
+
+* Copy buses-to-test.jpeg and buses-to-test.mp4 file to the data folder in the darknet directory.
+
+* Copy traffic-sign-to-test.jpeg and traffic-sign-to-testmp4 to the data folder in the darknet directory.
+
+* To test the Traffic Dataset Image type the following command : darknet.exe detector test cfg\ts_data.data cfg\yolov3_ts_test.cfg weights\yolov3_ts.weights -ext_output data\traffic-sign-to-test.jpg
+
+* Output will be stored as predictions.jpg
+
+* To test the Car Bicycle wheel Bus Dataset Image type the following command : darknet.exe detector test cfg\custom_data.data cfg\yolov3_custom_test.cfg weights\yolov3_custom.weights -ext_output data\buses-to-test.jpg
+
+* Output will be stored as predictions.jpg
+
+* To test the Traffic Dataset mp4 type the following command : darknet.exe detector test cfg\ts_data.data cfg\yolov3_ts_test.cfg weights\yolov3_ts.weights -thresh 0.85 -dont_show data\traffic-sign-totest.mp4 -out_filename result.avi
+
+* Output will be stored as result.avi
+
+* To test the Car Bicycle wheel Bus Dataset mp4 type the following command : darknet.exe detector test cfg\custom_data.data cfg\yolov3_custom_test.cfg weights\yolov3_custom.weights -thresh 0.85 -dont_show data\buses-to-test.mp4 -out_filename result.avi
+
+* Output will be stored as result.avi
