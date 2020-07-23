@@ -111,7 +111,7 @@ Course offered by Udemy. Created and taught by Valentyn Sichkar.
 
 ### Section 6 : Darknet
 
-* Install Tensorflow with GPU Support using thistutorial from Jeff Heaton [Tensorflow GPU](https://www.youtube.com/watch?v=qrkEYf-YDyI)
+* Install Tensorflow with GPU Support using this tutorial from Jeff Heaton [Tensorflow GPU](https://www.youtube.com/watch?v=qrkEYf-YDyI)
 
 * Install darknet using the this tutorial [Darknet Installation](https://medium.com/analytics-vidhya/installing-darknet-on-windows-462d84840e5a)
 
