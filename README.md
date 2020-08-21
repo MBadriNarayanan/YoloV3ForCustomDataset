@@ -55,7 +55,7 @@ Course offered by Udemy. Created and taught by Valentyn Sichkar.
 
 ### Section 3 : Extracting Frames from Video
 
-* Install ffmpeg
+* Install ffmpeg using : conda install -c conda-forge ffmpeg
 
 * Go to the directory of the video and type ffmpeg -i filename.mp4 -vf fps=4 image-%d.jpeg
 
