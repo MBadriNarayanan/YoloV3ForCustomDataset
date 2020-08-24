@@ -169,7 +169,7 @@ the configuration files. Also, it is needed to update number of filters in convo
 
 * For Traffic Dataset type the following command : darknet.exe detector train cfg\ts_data.data cfg\yolov3_ts_train.cfg weights\darknet53.conv.74 -dont_show
 
-* For Car Bicycle_wheel Bus Dataset type the following command : darknet.exe detector train cfg\custom_data.data cfg\yolov3_custom_train.cfg weights\darknet53.conv.7 -dont_show
+* For Car Bicycle_wheel Bus Dataset type the following command : darknet.exe detector train cfg\custom_data.data cfg\yolov3_custom_train.cfg weights\darknet53.conv.74 -dont_show
 
 #### Note : In all Data Preparation Notebooks give the proper location of the backup location
 
